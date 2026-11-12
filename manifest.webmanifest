@@ -1,12 +1,20 @@
 {
- "id":"./","name":"فلش‌کارت — یادگیری هوشمند","short_name":"فلش‌کارت",
+ "id":"./",
+ "name":"فلش‌کارت — یادگیری هوشمند",
+ "short_name":"فلش‌کارت",
  "description":"فلش‌کارت هوشمند با مرور فاصله‌دار، دسته‌بندی و پشتیبان‌گیری محلی",
- "lang":"fa","dir":"rtl","start_url":"./","scope":"./","display":"standalone",
- "display_override":["standalone","minimal-ui"],"orientation":"any",
- "background_color":"#0a0c13","theme_color":"#0a0c13",
+ "lang":"fa",
+ "dir":"rtl",
+ "start_url":"./",
+ "scope":"./",
+ "display":"standalone",
+ "display_override":["standalone","minimal-ui"],
+ "orientation":"any",
+ "background_color":"#0a0c13",
+ "theme_color":"#0a0c13",
  "categories":["education","productivity"],
  "icons":[
-  {"src":"./icons/source-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"},
-  {"src":"./icons/maskable-source.svg","sizes":"any","type":"image/svg+xml","purpose":"maskable"}
+  {"src":"./icons/source-icon.svg","sizes":"192x192 512x512","type":"image/svg+xml","purpose":"any"},
+  {"src":"./icons/maskable-source.svg","sizes":"512x512","type":"image/svg+xml","purpose":"maskable"}
  ]
 }

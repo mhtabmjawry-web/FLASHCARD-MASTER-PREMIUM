@@ -2,19 +2,24 @@
 
 Persian flashcard app with spaced repetition, local IndexedDB storage, dark/light themes, and offline support.
 
-## GitHub Pages publishing
+## Publish on GitHub Pages
 
-A deployment workflow is included at `.github/workflows/deploy-pages.yml`. One initial repository setting is needed:
+The deploy workflow is ready at `.github/workflows/deploy-pages.yml`. GitHub requires Pages to be enabled once for this repository:
 
-1. Open **Settings → Pages** in this repository.
-2. Set **Build and deployment → Source** to **GitHub Actions**.
-3. Save. The workflow deploys automatically after the next push to `main`.
+1. Open [Settings → Pages](https://github.com/mhtabmjawry-web/FLASHCARD-MASTER-PREMIUM/settings/pages).
+2. Under **Build and deployment → Source**, select **GitHub Actions** and save.
+3. Open [Actions → Deploy Flashcard PWA](https://github.com/mhtabmjawry-web/FLASHCARD-MASTER-PREMIUM/actions/workflows/deploy-pages.yml), choose **Run workflow** on `main`, and start it.
 
-## App features
-- Installable standalone app (PWA)
+After the green deployment completes, the site address is:
+`https://mhtabmjawry-web.github.io/FLASHCARD-MASTER-PREMIUM/`
+
+Subsequent pushes to `main` will deploy automatically.
+
+## Features
+- Installable standalone PWA
 - Offline app shell via Service Worker
 - Local IndexedDB storage for folders, decks, cards, and settings
-- Spaced repetition, sessions, import/export, and light/dark themes
+- Spaced repetition, study sessions, import/export, and light/dark themes
 - Selected stacked-flashcards icon (option 1)
 
 Cards are stored only in this browser/device. Use the in-app JSON backup before clearing browser data or moving to another device.
