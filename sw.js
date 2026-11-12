@@ -1,0 +1,6 @@
+/* Flashcard PWA — offline app shell */
+const CACHE_NAME='flashcard-pwa-v3';
+const APP_SHELL=['./','./index.html','./manifest.webmanifest','./icons/source-icon.svg','./icons/maskable-source.svg'];
+self.addEventListener('install',event=>event.waitUntil((async()=>{const c=await caches.open(CACHE_NAME);await c.addAll(APP_SHELL);await self.skipWaiting();})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{const k=await caches.keys();await Promise.all(k.filter(x=>x.startsWith('flashcard-pwa-')&&x!==CACHE_NAME).map(x=>caches.delete(x)));await self.clients.claim();})()));
+self.addEventListener('fetch',event=>{const q=event.request;if(q.method!=='GET')return;const u=new URL(q.url);if(u.origin!==self.location.origin)return;if(q.mode==='navigate'){event.respondWith((async()=>{try{const f=await fetch(q);if(f&&f.ok){const c=await caches.open(CACHE_NAME);await c.put('./index.html',f.clone());}return f;}catch(_){return(await caches.match('./index.html'))||(await caches.match('./'));}})());return;}event.respondWith((async()=>{const hit=await caches.match(q);if(hit)return hit;const f=await fetch(q);if(f&&f.ok){const c=await caches.open(CACHE_NAME);await c.put(q,f.clone());}return f;})());});

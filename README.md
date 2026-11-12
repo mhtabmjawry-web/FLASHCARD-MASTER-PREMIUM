@@ -2,17 +2,19 @@
 
 Persian flashcard app with spaced repetition, local IndexedDB storage, dark/light themes, and offline support.
 
-## Live site
-The GitHub Pages deployment workflow is included in `.github/workflows/deploy-pages.yml`.
+## GitHub Pages publishing
 
-## Deployment setup (one-time)
-In **Settings → Pages**, choose **GitHub Actions** as the source. Then each push to `main` deploys the PWA automatically.
+A deployment workflow is included at `.github/workflows/deploy-pages.yml`. One initial repository setting is needed:
 
-## Files
-- `index.html` — application
-- `manifest.webmanifest` — install metadata
-- `sw.js` — offline app shell
-- `icons/` — selected stacked-cards app icons
+1. Open **Settings → Pages** in this repository.
+2. Set **Build and deployment → Source** to **GitHub Actions**.
+3. Save. The workflow deploys automatically after the next push to `main`.
 
-## Data
-Cards and decks are stored locally in the browser's IndexedDB. Use the app's JSON backup/export function before clearing browser data or moving to another device.
+## App features
+- Installable standalone app (PWA)
+- Offline app shell via Service Worker
+- Local IndexedDB storage for folders, decks, cards, and settings
+- Spaced repetition, sessions, import/export, and light/dark themes
+- Selected stacked-flashcards icon (option 1)
+
+Cards are stored only in this browser/device. Use the in-app JSON backup before clearing browser data or moving to another device.
